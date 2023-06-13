@@ -10,4 +10,4 @@ python-dotenv
 faiss-cpu
 streamlit-extras
 tiktoken
-langflow
+
