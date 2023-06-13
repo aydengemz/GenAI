@@ -3,3 +3,11 @@ streamlit
 torch
 openai
 langchain
+st-annotated-text
+streamlit-drawable-canvas
+PyPDF2
+python-dotenv
+faiss-cpu
+streamlit-extras
+tiktoken
+langflow
