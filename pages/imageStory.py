@@ -5,7 +5,8 @@ from langchain import PromptTemplate, LLMChain, OpenAI
 import requests
 import os
 import streamlit as st
-
+from PIL import Image
+import io
 from auth import check_password
 
 
@@ -19,6 +20,14 @@ if check_password():
             "image-to-text", model="Salesforce/blip-image-captioning-base"
         )
         text = image_to_text(url)[0]["generated_text"]
+        print(text)
+        return text
+
+    def img2textFile(file):
+        image_to_text = pipeline(
+            "image-to-text", model="Salesforce/blip-image-captioning-base"
+        )
+        text = image_to_text(file)[0]["generated_text"]
         print(text)
         return text
 
@@ -53,6 +62,28 @@ if check_password():
         with open("audio.flac", "wb") as file:
             file.write(response.content)
 
+    def text2speech2(message):
+        API_URL = "https://api-inference.huggingface.co/models/espnet/kan-bayashi_ljspeech_vits"
+
+        headers = {"Authorization": f"Bearer {HUGGINGFACEHUB_API_TOKEN}"}
+
+        payloads = {"inputs": message}
+        response = requests.post(API_URL, headers=headers, json=payloads)
+        with open("audio2.flac", "wb") as file:
+            file.write(response.content)
+
+    def text2img(message):
+        API_URL = (
+            "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
+        )
+        headers = {"Authorization": "Bearer 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"}
+
+        payloads = {"inputs": message}
+
+        response = requests.post(API_URL, headers=headers, json=payloads)
+        with open("image.jpg", "wb") as file:
+            file.write(response.content)
+
     def main():
         st.header("Image Story 📷 !")
         st.write(
@@ -68,6 +99,29 @@ if check_password():
 
             text2speech(story)
             st.audio("audio.flac")
+
+        st.write("Text to Image to Text to Story")
+        input2 = st.text_input("Topic Text", "")
+        if st.button("Enter Text"):
+            text2img(input2)
+
+            with st.expander("See Image"):
+                image = Image.open("image.jpg")
+                st.image(image, caption="Your Image")
+
+            text = img2textFile(image)
+            with st.expander("See Text"):
+                st.write(text)
+
+            story = generate_story(text)
+            with st.expander("See Story"):
+                st.write(story)
+
+            text2speech2(story)
+            st.write("Listen to Story")
+            st.audio("audio2.flac")
+
+            st.video("https://www.youtube.com/watch?v=_j7JEDWuqLE")
 
     if __name__ == "__main__":
         main()
