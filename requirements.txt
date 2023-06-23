@@ -14,3 +14,9 @@ playsound
 elevenlabs
 audio-recorder-streamlit
 unstructured
+requests
+scipy
+tenacity
+tiktoken
+termcolor 
+pyairtable
