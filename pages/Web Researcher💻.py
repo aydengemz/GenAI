@@ -9,7 +9,6 @@ import json
 import streamlit as st
 from auth import check_password
 
-
 if check_password():
     SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY")
 

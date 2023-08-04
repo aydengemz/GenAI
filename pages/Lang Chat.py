@@ -17,17 +17,7 @@ from auth import check_password
 if check_password():
     # Sidebar contents
     with st.sidebar:
-        st.title("🤗💬 LLM Chat App")
-        st.markdown(
-            """
-        ## About
-        This app is an LLM-powered chatbot built using:
-        - [Streamlit](https://streamlit.io/)
-        - [LangChain](https://python.langchain.com/)
-        - [OpenAI](https://platform.openai.com/docs/models) LLM model
-    
-        """
-        )
+        st.title("💬 LLM Chat")
         add_vertical_space(5)
         st.write(
             "Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)"

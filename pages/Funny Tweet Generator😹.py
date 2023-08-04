@@ -7,6 +7,7 @@ from auth import check_password
 from langchain import PromptTemplate, LLMChain, OpenAI
 
 
+
 if check_password():
     load_dotenv(find_dotenv())
     openai.api_key = os.getenv("OPENAI_API_KEY")
