@@ -1,12 +1,8 @@
 import streamlit as st
 
-from auth import check_password
 
 
-if check_password():
-    st.write("Here goes your normal Streamlit app...")
-    st.button("Click me")
 
-    st.write("# Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
+st.write("🍥 GenAI App 🐟")
+st.caption("By: Ayden Xu")
+st.caption("Select a demo from the sidebar to get started.")
