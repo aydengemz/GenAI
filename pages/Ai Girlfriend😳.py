@@ -84,23 +84,19 @@ if check_password():
         msg = st.text_input("Send Your Message", "")
 
         audio_bytes = audio_recorder(
-    text="",
-    recording_color="#e8b62c",
-    neutral_color="#6aa36f",
-    icon_name="user",
-    icon_size="6x",
-)
+            text="",
+            recording_color="#e8b62c",
+            neutral_color="#6aa36f",
+            icon_name="user",
+            icon_size="6x",
+        )
         if audio_bytes:
             if st.button("save audio !"):
                 st.write("audio saved !")
-                
-
 
         if st.button("Send !"):
             message = get_response_from_ai(msg)
             st.write(message)
-            # spk = get_voice_msg(message)
-            # st.audio("/Users/aydenxu/CODE/0python/mlSummer/streamlitCloud/audio.mp3")
             aud = playAudio(message)
             st.audio(aud)
 

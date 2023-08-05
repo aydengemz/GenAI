@@ -59,7 +59,6 @@ if check_password():
     # get content from each article & create a vector database
 
     def get_content_from_urls(urls):
-        # use unstructuredURLLoader
         loader = UnstructuredURLLoader(urls=urls)
         data = loader.load()
 
@@ -102,7 +101,7 @@ if check_password():
         print(summaries)
         return summaries
 
-    # Turn summarization into twitter thread
+
     def generate_thread(summaries, query):
         summaries_str = str(summaries)
 
@@ -149,7 +148,6 @@ if check_password():
         if query:
             print(query)
             st.write("Generating twitter thread for: ", query)
-
             search_results = search(query)
             with st.expander("search results"):
                 st.info(search_results)
