@@ -9,7 +9,6 @@ PyPDF2
 python-dotenv
 faiss-cpu
 streamlit-extras
-tiktoken
 playsound
 elevenlabs
 audio-recorder-streamlit

@@ -7,6 +7,6 @@ This app showcases the use of Streamlit, LLMs, GenAI models, Langchain, and vari
 
 For Diagram: [Click Here](https://www.figma.com/file/E9WcNTZPc1gCoj2M900GQf/GenAI-Diagrams?type=whiteboard&node-id=0%3A1&t=2qoi2hjs7gMnHKXb-1)
 
-Live Demo: [Here](https://www.google.com)
+Live Demo: [Here](https://aydengemz-streamlitcloud-app-iejrzp.streamlit.app/)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayden-xu-a34988237/)
