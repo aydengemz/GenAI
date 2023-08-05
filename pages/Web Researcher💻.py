@@ -138,7 +138,6 @@ def main():
     st.set_page_config(page_title="Free Tweet Generator", page_icon=":bird:")
 
     st.header("Web Tweeter :bird:")
-    st.image("diagrams/webresearcher.png", use_column_width=True)
     openApiKey = st.text_input("Please enter your OpenAI API Key")
     SerpApiKey = st.text_input("Please enter your SerpAPI API Key")
     query = st.text_input("Topic of twitter thread")

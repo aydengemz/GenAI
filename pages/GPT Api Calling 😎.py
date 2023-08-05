@@ -228,7 +228,6 @@ def ask_function_calling(query, rapidApiKey):
 
 st.set_page_config("API Call Chatbot", "🤖", "wide")
 st.header("Api Call Chatbot 😎")
-st.image("diagrams/apicall.png", use_column_width=True)
 st.subheader(
     "Current Functions: Get stock movers, Get stock news, List Current Free games on Epic Games, Get Current Weather, Movie Description"
 )

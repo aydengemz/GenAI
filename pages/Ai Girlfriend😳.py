@@ -1,9 +1,8 @@
 from langchain import OpenAI, LLMChain, PromptTemplate
-from langchain.memory import ConversationBufferWindowMemory  # chat history
+from langchain.memory import ConversationBufferWindowMemory 
 from playsound import playsound
 import streamlit as st
 from elevenlabs import generate, play
-from audio_recorder_streamlit import audio_recorder
 import openai
 
 

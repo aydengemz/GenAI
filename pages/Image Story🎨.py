@@ -94,8 +94,6 @@ def main():
     st.header("Image Story 📷 !")
     st.write("Generate a short story based on a word!")
 
-    st.image("diagrams/imagestory.png", use_column_width=True)
-
     openAIKey = st.text_input("Enter your OpenAI API Key")
     huggingKey = st.text_input("Enter your HuggingFace API Key")
 
