@@ -16,3 +16,4 @@ requests
 scipy
 tenacity
 termcolor 
+pydantic
