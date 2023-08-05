@@ -18,9 +18,9 @@ bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
 
-# Create a canvas component
+
 canvas_result = st_canvas(
-    fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
+    fill_color="rgba(255, 165, 0, 0.3)",  #
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color=bg_color,
