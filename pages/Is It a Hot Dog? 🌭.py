@@ -1,13 +1,6 @@
 import streamlit as st
 from transformers import pipeline
 from PIL import Image
-from auth import check_password
-
-
-st.title("Squared Calculator")
-
-x = st.slider("Select a value")
-st.write(x, "squared is", x * x)
 
 pipeline = pipeline(task="image-classification", model="julien-c/hotdog-not-hotdog")
 

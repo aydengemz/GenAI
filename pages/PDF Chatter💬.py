@@ -18,7 +18,7 @@ def main():
     openaikey = st.text_input("Enter your OpenAI API Key:")
     pdf = st.file_uploader("Upload your PDF", type="pdf")
 
-    # st.write(pdf)
+  
     if pdf is not None:
         openai.api_key = openaikey
         pdf_reader = PdfReader(pdf)
@@ -35,19 +35,19 @@ def main():
         # # embeddings
         store_name = pdf.name[:-4]
         st.write(f"{store_name}")
-        # st.write(chunks)
+ 
 
         if os.path.exists(f"{store_name}.pkl"):
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
-            # st.write('Embeddings Loaded from the Disk')s
+       
         else:
             embeddings = OpenAIEmbeddings()
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(VectorStore, f)
         query = st.text_input("Ask questions about your PDF file:")
-        # st.write(query)
+
 
         if query:
             docs = VectorStore.similarity_search(query=query, k=3)

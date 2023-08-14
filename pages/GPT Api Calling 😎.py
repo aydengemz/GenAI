@@ -3,7 +3,6 @@ import json
 import os
 import requests
 import streamlit as st
-from auth import check_password
 
 function_descriptions = [
     {
